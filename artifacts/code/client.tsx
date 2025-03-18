@@ -94,11 +94,16 @@ export const codeArtifact = new Artifact<"code", Metadata>({
   },
   content: ({
     mode,
-    currentVersionIndex,
     getDocumentContentById,
     metadata,
     setMetadata,
-    ...props
+
+    content,
+    onSaveContent,
+    status,
+    isCurrentVersion,
+    currentVersionIndex,
+    suggestions,
   }) => {
     const oldContent = getDocumentContentById(currentVersionIndex - 1);
     const newContent = getDocumentContentById(currentVersionIndex);
@@ -113,7 +118,14 @@ export const codeArtifact = new Artifact<"code", Metadata>({
           />
         ) : (
           <div className="px-1">
-            <CodeEditor {...props} />
+            <CodeEditor
+              content={content}
+              onSaveContent={onSaveContent}
+              status={status}
+              isCurrentVersion={isCurrentVersion}
+              currentVersionIndex={currentVersionIndex}
+              suggestions={suggestions}
+            />
           </div>
         )}
 
