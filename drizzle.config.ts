@@ -10,7 +10,7 @@ export default defineConfig({
   out: "./lib/db/migrations",
   dialect: "postgresql",
   dbCredentials: {
-    // biome-ignore lint: Forbidden non-null assertion.
+    // eslint-disable-next-line no-use-before-define
     url: process.env.POSTGRES_URL!,
   },
 });
