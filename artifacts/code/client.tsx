@@ -97,7 +97,6 @@ export const codeArtifact = new Artifact<"code", Metadata>({
     getDocumentContentById,
     metadata,
     setMetadata,
-
     content,
     onSaveContent,
     status,
@@ -115,6 +114,14 @@ export const codeArtifact = new Artifact<"code", Metadata>({
             oldValue={oldContent}
             newValue={newContent}
             useDarkTheme={true}
+            splitView={currentVersionIndex - 1 >= 0 ? true : false}
+            leftTitle={`v${
+              currentVersionIndex === 0
+                ? currentVersionIndex
+                : currentVersionIndex - 1
+            }`}
+            rightTitle={`v${currentVersionIndex}`}
+            styles={{ line: { fontFamily: "monospace" } }}
           />
         ) : (
           <div className="px-1">
@@ -242,16 +249,9 @@ export const codeArtifact = new Artifact<"code", Metadata>({
     },
     {
       icon: <ClockRewind size={18} />,
-      description: "View changes",
+      description: "Diff Mode",
       onClick: ({ handleVersionChange }) => {
         handleVersionChange("toggle");
-      },
-      isDisabled: ({ currentVersionIndex, setMetadata }) => {
-        if (currentVersionIndex === 0) {
-          return true;
-        }
-
-        return false;
       },
     },
     {
