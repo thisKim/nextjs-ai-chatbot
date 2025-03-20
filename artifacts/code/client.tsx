@@ -6,7 +6,7 @@ import {
 } from "@/components/console";
 import { Artifact } from "@/components/create-artifact";
 import {
-  ClockRewind,
+  CodeCompare,
   CopyIcon,
   LogsIcon,
   MessageIcon,
@@ -248,8 +248,8 @@ export const codeArtifact = new Artifact<"code", Metadata>({
       },
     },
     {
-      icon: <ClockRewind size={18} />,
-      description: "Diff Mode",
+      icon: <CodeCompare />,
+      description: "Diff View",
       onClick: ({ handleVersionChange }) => {
         handleVersionChange("toggle");
       },
