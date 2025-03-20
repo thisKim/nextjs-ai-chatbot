@@ -60,9 +60,9 @@ pnpm dev
 
 Your app template should now be running on [localhost:3000](http://localhost:3000/).
 
-## Thought Process
+## Notes
 
 1. PM - Assess requrements and time (~3hrs)
 2. BE / Infra - Get working demo of project up and running. (Configuration over code)
 3. PM - Assess app, feature set, and UI/UX patterns.
-4. FE - Assess data and component patterns and work within already establsihed patterns.
+4. FE - Assess data and component implementation and work within already established data and UI/UX patterns.
