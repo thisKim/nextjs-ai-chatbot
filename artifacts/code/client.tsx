@@ -119,8 +119,12 @@ export const codeArtifact = new Artifact<"code", Metadata>({
               currentVersionIndex === 0
                 ? currentVersionIndex
                 : currentVersionIndex - 1
+            } ${
+              currentVersionIndex === 0 && isCurrentVersion ? "(latest)" : ""
             }`}
-            rightTitle={`v${currentVersionIndex}`}
+            rightTitle={`v${currentVersionIndex} ${
+              isCurrentVersion ? "(latest)" : ""
+            }`}
             styles={{ line: { fontFamily: "monospace" } }}
           />
         ) : (
