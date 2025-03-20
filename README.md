@@ -62,6 +62,8 @@ Your app template should now be running on [localhost:3000](http://localhost:300
 
 ## Notes
 
+Using the flappy bird use case, you should now see a "Diff View" button on the upper right.
+
 1. PM - Assess requrements and time (~3hrs)
 2. BE / Infra - Get working demo of project up and running. (Configuration over code)
 3. PM - Assess app, feature set, and UI/UX patterns.
